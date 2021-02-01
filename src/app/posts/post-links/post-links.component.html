@@ -1,0 +1,11 @@
+<fa-icon
+  [icon]="faAngleRight"
+  [class.fa-collapsed]="isCollapsed"
+  [class.fa-expanded]="!isCollapsed"
+  [styles]="{'color': '#93c54b'}"></fa-icon><a href="#" (click)="isCollapsed = !isCollapsed"> 2021</a>
+<div [collapse]="isCollapsed" [isAnimated]="true">
+  <ul>
+    <li><a href="#">January</a></li>
+    <li><a href="#">February</a></li>
+  </ul>
+</div>
