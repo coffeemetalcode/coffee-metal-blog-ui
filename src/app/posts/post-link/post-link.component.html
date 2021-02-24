@@ -1,0 +1,14 @@
+<fa-icon
+    [icon]="faAngleRight"
+    [classes]="['ng-fa-icon-chevron']"
+    [class.chevron]="true"
+    [class.fa-collapsed]="isCollapsed"
+    [class.fa-expanded]="!isCollapsed"
+    [styles]="{'color': '#93c54b'}"></fa-icon><a href="#" (click)="isCollapsed = !isCollapsed">
+      <ng-content></ng-content>
+    </a>
+  <div [collapse]="isCollapsed" [isAnimated]="true">
+    <ul>
+      <ng-content select="li"></ng-content>
+    </ul>
+  </div>

@@ -1,0 +1,25 @@
+a {
+  padding-left: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+
+.chevron {
+  padding-right: 0rem;
+}
+
+.fa-expanded {
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: transform 200ms;
+}
+
+.fa-collapsed {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 200ms;
+}

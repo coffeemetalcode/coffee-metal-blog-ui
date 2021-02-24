@@ -1,17 +1,5 @@
 ul {
   list-style-type: none;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 1rem;
   padding: 0;
-}
-
-.fa-expanded {
-  display: inline-block;
-  transform: rotate(90deg);
-  transition: transform 250ms;
-}
-
-.fa-collapsed {
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: transform 250ms;
 }

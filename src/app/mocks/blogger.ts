@@ -1,4 +1,4 @@
-export const blogger = {
+export const BLOGGER = {
   "kind": "blogger#postList",
   "items": [
       {

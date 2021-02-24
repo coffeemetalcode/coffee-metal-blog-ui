@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
+
+import { PostLinksService } from './post-links.service';
+import { Link } from './post-links.model';
 
 @Component({
   selector: 'app-post-links',
@@ -8,27 +11,27 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./post-links.component.scss']
 })
 export class PostLinksComponent implements OnInit {
-  links = {
-    "2020": {
-      "November": ["november-1", "november-2"],
-      "December": ["december-1", "december-2"]
-    },
-    "2021": {
-      "January": ["january-1", "january-2"],
-      "February": []
-    }
-  };
-  isCollapsed = false;
-  faAngleRight = faAngleRight;
+  links: Link[] = [];
+  isLoading = false;
+  private _linksSub = new Subscription;
 
-  constructor() { }
+  constructor(public linksService: PostLinksService) { }
 
   ngOnInit(): void {
-    console.log(this.links);
+    this.linksService.getPostLinks();
+
+    this._linksSub = this.linksService.getUpdatedLinks()
+     .subscribe((links: Link[]) => {
+      this.links = links;
+     });
+      
+
+    // this._linksSub
   }
 
-  isExpanded(): number {
-    return this.isCollapsed ? 0 : 90;
+  handleLink(id) {
+    console.log('handle link works');
+    console.log('post id', id);
   }
 
 }
